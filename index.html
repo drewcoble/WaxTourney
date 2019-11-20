@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Double Elim Tourney</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Arvo|Barlow&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div class="roundSelect">
+        <i
+          v-bind:class="{firstRound : (round==1 && bracket!='cons') || (round==3 && bracket=='cons')}"
+          v-on:click="roundDown()"
+          class="fas fa-arrow-circle-left"
+        ></i>
+        <div>ROUND {{ round }} (Week {{ round + 11 }})</div>
+        <i
+          v-bind:class="{lastRound : round==5}"
+          v-on:click="roundUp"
+          class="fas fa-arrow-circle-right"
+        ></i>
+      </div>
+      <h1>{{ title }}</h1>
+      <!-- Div to show when championship tourney is selected -->
+      <div class="bracketContainer" v-if="bracket=='champions'">
+        <!-- ROUND 1 - Wk12 -->
+        <div class="winnersLine" v-if="round == 1"></div>
+        <div
+          class="matchupDiv winners"
+          v-if="round == 1"
+          v-for="(matchup, index) in winners_bracket.round1"
+        >
+          <div class="teamDiv" v-for="team in matchup">
+            <div class="teamSeed">{{ team.seed }}</div>
+            <div class="teamInfo">
+              <div>{{ team.name }}</div>
+              <div>{{ team.score }}</div>
+            </div>
+          </div>
+          <div
+            v-if="index != (winners_bracket.round1.length - 1)"
+            class="matchupBreak"
+          ></div>
+        </div>
+        <div class="winnersLine" v-if="round == 1"></div>
+
+        <!-- ROUND 2 - Winner's Bracket -->
+        <div class="winnersLine" v-if="round == 2"></div>
+        <div
+          class="matchupDiv winners"
+          v-if="round == 2"
+          v-for="(matchup, index) in winners_bracket.round2"
+        >
+          <div class="teamDiv" v-for="team in matchup">
+            <div class="teamSeed">{{ team.seed }}</div>
+            <div class="teamInfo">
+              <div>{{ team.name }}</div>
+              <div>{{ team.score }}</div>
+            </div>
+          </div>
+          <div
+            v-if="index != (winners_bracket.round2.length - 1)"
+            class="matchupBreak"
+          ></div>
+        </div>
+        <div class="winnersLine break" v-if="round == 2"></div>
+        <!-- ROUND 2 - Loser's bracket -->
+        <div class="losersLine" v-if="round == 2"></div>
+        <div
+          class="matchupDiv losers"
+          v-if="round == 2"
+          v-for="(matchup, index) in losers_bracket.round2"
+        >
+          <div class="teamDiv" v-for="team in matchup">
+            <div class="teamSeed">{{ team.seed }}</div>
+            <div class="teamInfo">
+              <div>{{ team.name }}</div>
+              <div>{{ team.score }}</div>
+            </div>
+          </div>
+          <div
+            v-if="index != (losers_bracket.round2.length - 1)"
+            class="matchupBreak"
+          ></div>
+        </div>
+        <div class="losersLine" v-if="round == 2"></div>
+
+        <!-- ROUND 3 - Winner's bracket -->
+        <div class="winnersLine" v-if="round == 3"></div>
+        <div
+          class="matchupDiv winners"
+          v-if="round == 3"
+          v-for="(matchup, index) in winners_bracket.round3"
+        >
+          <div class="teamDiv" v-for="team in matchup">
+            <div class="teamSeed">{{ team.seed }}</div>
+            <div class="teamInfo">
+              <div>{{ team.name }}</div>
+              <div>{{ team.score }}</div>
+            </div>
+          </div>
+          <div
+            v-if="index != (winners_bracket.round3.length - 1)"
+            class="matchupBreak"
+          ></div>
+        </div>
+        <div class="winnersLine break" v-if="round == 3"></div>
+        <!-- ROUND 3 - Loser's bracket -->
+        <div class="losersLine" v-if="round == 3"></div>
+        <div
+          class="matchupDiv losers"
+          v-if="round == 3"
+          v-for="(matchup, index) in losers_bracket.round3"
+        >
+          <div class="teamDiv" v-for="team in matchup">
+            <div class="teamSeed">{{ team.seed }}</div>
+            <div class="teamInfo">
+              <div>{{ team.name }}</div>
+              <div>{{ team.score }}</div>
+            </div>
+          </div>
+          <div
+            v-if="index != (losers_bracket.round3.length - 1)"
+            class="matchupBreak"
+          ></div>
+        </div>
+        <div class="losersLine" v-if="round == 3"></div>
+
+        <!-- ROUND 4 - Winner's bracket
+             -- ROYAL RUMBLE -->
+        <h3 v-if="round == 4">ROYAL RUMBLE</h3>
+        <div class="chipLine" v-if="round == 4"></div>
+        <div
+          class="matchupDiv chip"
+          v-if="round == 4"
+          v-for="(matchup, index) in winners_bracket.round4"
+        >
+          <div class="teamDiv" v-for="team in matchup">
+            <div class="teamSeed">{{ team.seed }}</div>
+            <div class="teamInfo">
+              <div>{{ team.name }}</div>
+              <div>{{ team.score }}</div>
+            </div>
+          </div>
+        </div>
+        <div class="chipLine break" v-if="round == 4"></div>
+        <!-- ROUND 4 - Loser's Bracket -->
+        <div class="losersLine" v-if="round == 4"></div>
+        <div
+          class="matchupDiv losers"
+          v-if="round == 4"
+          v-for="(matchup, index) in losers_bracket.round4"
+        >
+          <div class="teamDiv" v-for="team in matchup">
+            <div class="teamSeed">{{ team.seed }}</div>
+            <div class="teamInfo">
+              <div>{{ team.name }}</div>
+              <div>{{ team.score }}</div>
+            </div>
+          </div>
+          <div
+            v-if="index != (winners_bracket.round4.length - 1)"
+            class="matchupBreak"
+          ></div>
+        </div>
+        <div class="losersLine" v-if="round == 4"></div>
+
+        <!-- ROUND 5 - Wk16 -- IF NECESSARY -->
+        <h3 v-if="round == 5">FOR THE RING.</h3>
+        <div class="chipLine" v-if="round == 5"></div>
+        <div
+          class="matchupDiv chip"
+          v-if="round == 5"
+          v-for="(matchup, index) in winners_bracket.round5"
+        >
+          <div class="teamDiv" v-for="team in matchup">
+            <div class="teamSeed">{{ team.seed }}</div>
+            <div class="teamInfo">
+              <div>{{ team.name }}</div>
+              <div>{{ team.score }}</div>
+            </div>
+          </div>
+          <div
+            v-if="index != (winners_bracket.round5.length - 1)"
+            class="matchupBreak"
+          ></div>
+        </div>
+        <div class="chipLine" v-if="round == 5"></div>
+      </div>
+
+      <!-- Div to show when consolation tourney is selected -->
+      <div class="bracketContainer" v-if="bracket=='cons'">
+        <!-- display consolation bracket here -->
+        <!-- <p>consolation bracket</p> -->
+        <h3 v-if="round < 3">STARTS IN ROUND 3</h3>
+      </div>
+      <div class="bracketContainer" v-if="bracket=='feces'">
+        <!-- display feces cup bracket here -->
+        <!-- <p>feces cup© bracket</p> -->
+      </div>
+
+      <nav class="navLinksContainer">
+        <div class="navLink" v-on:click="changeBracket('champions')">
+          <i style="color: goldenrod" class="fas fa-trophy"></i>
+          <p>CHIP</p>
+        </div>
+        <div class="navDivide"></div>
+        <!-- <div class="navLink" v-on:click="changeBracket('L')">
+          ‍L
+        </div> -->
+        <div class="navDivide"></div>
+
+        <div class="navLink" v-on:click="changeBracket('cons')">
+          <i style="color: lightblue" class="fas fa-award"></i>
+          <p>CONS.</p>
+        </div>
+        <div class="navDivide"></div>
+
+        <div class="navLink" v-on:click="changeBracket('feces')">
+          <i style="color: saddlebrown" class="fas fa-poop"></i>
+          <p>FECES</p>
+        </div>
+      </nav>
+
+      <footer>
+        <div>WAX MUSEUM © 2019</div>
+        <a
+          href="https://www.facebook.com/groups/874536989281530/"
+          class="fab fa-facebook"
+        ></a>
+        <a href="https://football.fantasysports.yahoo.com/f1/57077"
+          ><img
+            src="images/yahoo.png"
+            alt=""
+            height="25px"
+            style="margin-top: 5px;"
+        /></a>
+      </footer>
+    </div>
+
+    <!--links to javascript stuff-->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
