@@ -19,13 +19,24 @@
     <div id="app">
       <div class="roundSelect">
         <i
-          v-bind:class="{firstRound : (round==1 && bracket!='cons') || (round==3 && bracket=='cons')}"
+          v-bind:class="{firstRound : round==1}"
           v-on:click="roundDown()"
           class="fas fa-arrow-circle-left"
         ></i>
-        <div>ROUND {{ round }} (Week {{ round + 11 }})</div>
+        <div v-if="bracket=='champions'">
+          ROUND {{ round }} (Week {{ round + 11 }})
+        </div>
+        <div v-if="bracket=='cons'">
+          ROUND {{ round }} (Week {{ round + 11 }})
+        </div>
+        <div v-if="bracket=='feces' && round == 1">
+          ROUND {{ round }} (Weeks {{ round + 11 }} & {{ round + 12 }})
+        </div>
+        <div v-if="bracket=='feces' && round == 2">
+          ROUND {{ round }} (Weeks {{ round + 12 }} - {{ round + 14 }})
+        </div>
         <i
-          v-bind:class="{lastRound : round==5}"
+          v-bind:class="{lastRound : (round==5 && bracket=='champions') || (round==4 && bracket=='cons') || (round==2 && bracket=='feces')}"
           v-on:click="roundUp"
           class="fas fa-arrow-circle-right"
         ></i>
@@ -202,11 +213,160 @@
       <div class="bracketContainer" v-if="bracket=='cons'">
         <!-- display consolation bracket here -->
         <!-- <p>consolation bracket</p> -->
-        <h3 v-if="round < 3">STARTS IN ROUND 3</h3>
+
+        <!-- ROUND 1 - Week 14 -->
+        <div class="consLine" v-if="round == 1"></div>
+        <div
+          class="matchupDiv cons"
+          v-if="round == 1"
+          v-for="(matchup, index) in cons_bracket.round1"
+        >
+          <div class="teamDiv" v-for="team in matchup">
+            <div class="teamSeed">{{ team.seed }}</div>
+            <div class="teamInfo">
+              <div>{{ team.name }}</div>
+              <div>{{ team.score }}</div>
+            </div>
+          </div>
+          <div
+            v-if="index != (cons_bracket.round1.length - 1)"
+            class="matchupBreak"
+          ></div>
+        </div>
+        <div class="consLine" v-if="round == 1"></div>
+
+        <!-- ROUND 2 - Week 15 -->
+        <div class="consLine" v-if="round == 2"></div>
+        <div
+          class="matchupDiv cons"
+          v-if="round == 2"
+          v-for="(matchup, index) in cons_bracket.round2"
+        >
+          <div class="teamDiv" v-for="team in matchup">
+            <div class="teamSeed">{{ team.seed }}</div>
+            <div class="teamInfo">
+              <div>{{ team.name }}</div>
+              <div>{{ team.score }}</div>
+            </div>
+          </div>
+          <div
+            v-if="index != (cons_bracket.round2.length - 1)"
+            class="matchupBreak"
+          ></div>
+        </div>
+        <div class="consLine" v-if="round == 2"></div>
+
+        <!-- ROUND 3 - Week 16 -->
+        <div class="consLine" v-if="round == 3"></div>
+        <div
+          class="matchupDiv cons"
+          v-if="round == 3"
+          v-for="(matchup, index) in cons_bracket.round3"
+        >
+          <div class="teamDiv" v-for="team in matchup">
+            <div class="teamSeed">{{ team.seed }}</div>
+            <div class="teamInfo">
+              <div>{{ team.name }}</div>
+              <div>{{ team.score }}</div>
+            </div>
+          </div>
+          <div
+            v-if="index != (cons_bracket.round3.length - 1)"
+            class="matchupBreak"
+          ></div>
+        </div>
+        <div class="consLine" v-if="round == 3"></div>
+
+        <!-- ROUND 4 - Week 17 -->
+        <div class="consLine" v-if="round == 4"></div>
+        <div
+          class="matchupDiv cons"
+          v-if="round == 4"
+          v-for="(matchup, index) in cons_bracket.round4"
+        >
+          <div class="teamDiv" v-for="team in matchup">
+            <div class="teamSeed">{{ team.seed }}</div>
+            <div class="teamInfo">
+              <div>{{ team.name }}</div>
+              <div>{{ team.score }}</div>
+            </div>
+          </div>
+          <div
+            v-if="index != (cons_bracket.round4.length - 1)"
+            class="matchupBreak"
+          ></div>
+        </div>
+        <div class="consLine" v-if="round == 4"></div>
       </div>
+
+      <!-- Feces cup -->
       <div class="bracketContainer" v-if="bracket=='feces'">
         <!-- display feces cup bracket here -->
         <!-- <p>feces cup© bracket</p> -->
+        <!-- ROUND 1 - Week 12 -->
+        <h4 v-if="round == 1">Week 12</h4>
+        <div class="fecesLine" v-if="round == 1"></div>
+        <div
+          class="matchupDiv feces"
+          v-if="round == 1"
+          v-for="(matchup, index) in feces_bracket.round1"
+        >
+          <div class="teamDiv" v-for="team in matchup">
+            <div class="teamSeed">{{ team.seed }}</div>
+            <div class="teamInfo">
+              <div>{{ team.name }}</div>
+              <div>{{ team.score1 }}</div>
+            </div>
+          </div>
+          <div
+            v-if="index != (feces_bracket.round1.length - 1)"
+            class="matchupBreak"
+          ></div>
+        </div>
+        <div class="fecesLine" v-if="round == 1"></div>
+        <!-- ROUND 1 - Week 13 -->
+        <h4 v-if="round == 1">Week 13</h4>
+        <div class="fecesLine" v-if="round == 1"></div>
+        <div
+          class="matchupDiv feces"
+          v-if="round == 1"
+          v-for="(matchup, index) in feces_bracket.round1"
+        >
+          <div class="teamDiv" v-for="team in matchup">
+            <div class="teamSeed">{{ team.seed }}</div>
+            <div class="teamInfo">
+              <div>{{ team.name }}</div>
+              <div>{{ team.score2 }}</div>
+            </div>
+          </div>
+          <div
+            v-if="index != (feces_bracket.round1.length - 1)"
+            class="matchupBreak"
+          ></div>
+        </div>
+        <div class="fecesLine" v-if="round == 1"></div>
+
+        <!-- ROUND 2 - Week 14 -->
+        <h4 v-if="round == 2">Worst 2 of 3</h4>
+        <div class="fecesLine" v-if="round == 2"></div>
+        <div
+          class="matchupDiv feces"
+          v-if="round == 2"
+          v-for="(matchup, index) in feces_bracket.round2"
+        >
+          <div class="teamDiv" v-for="team in matchup">
+            <div class="teamSeed">{{ team.seed }}</div>
+            <div class="teamInfo">
+              <div>{{ team.name }}</div>
+              <div>{{ team.score1 }}</div>
+            </div>
+          </div>
+          <div
+            v-if="index != (feces_bracket.round2.length - 1)"
+            class="matchupBreak"
+          ></div>
+        </div>
+        <div class="fecesLine" v-if="round == 2"></div>
       </div>
       <!-- <div style="height: 1px;width: 100%, color: black">
         This is an empty div meant to provide spacing.

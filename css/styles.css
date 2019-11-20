@@ -19,7 +19,7 @@ h1 {
   font-family: "Arvo", serif;
   text-align: center;
   margin: 0 5px;
-  height: 95px;
+  height: 90px;
   padding-top: 60px;
   font-size: 20px;
   letter-spacing: 1px; }
@@ -31,6 +31,15 @@ h3 {
   margin: 5px;
   letter-spacing: 7px;
   font-size: 18px;
+  font-weight: 100; }
+
+h4 {
+  color: saddlebrown;
+  font-family: "Arvo", serif;
+  text-align: center;
+  margin: 3px;
+  letter-spacing: 3px;
+  font-size: 14px;
   font-weight: 100; }
 
 .navLinksContainer {
@@ -112,6 +121,10 @@ h3 {
     background-color: rgba(0, 0, 150, 0.35); }
   .bracketContainer .chip {
     background-color: rgba(218, 165, 32, 0.35); }
+  .bracketContainer .cons {
+    background-color: rgba(100, 100, 105, 0.45); }
+  .bracketContainer .feces {
+    background-color: rgba(139, 69, 19, 0.45); }
   .bracketContainer .matchupDiv {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -191,6 +204,18 @@ h3 {
     height: 4px;
     width: 100%;
     background-color: rgba(218, 165, 32, 0.85);
+    border-radius: 3px;
+    margin: 0 auto; }
+  .bracketContainer .consLine {
+    height: 4px;
+    width: 100%;
+    background-color: rgba(100, 100, 105, 0.85);
+    border-radius: 3px;
+    margin: 0 auto; }
+  .bracketContainer .fecesLine {
+    height: 4px;
+    width: 100%;
+    background-color: rgba(139, 69, 19, 0.85);
     border-radius: 3px;
     margin: 0 auto; }
   .bracketContainer .break {

@@ -192,7 +192,7 @@ var app = new Vue({
         ]
       ]
     },
-    feces_cup: {
+    feces_bracket: {
       round1: [
         [
           {
@@ -206,9 +206,7 @@ var app = new Vue({
             seed: "10",
             score1: 0,
             score2: 0
-          }
-        ],
-        [
+          },
           {
             name: "Not Sparin' the Rod",
             seed: "11",
@@ -228,23 +226,140 @@ var app = new Vue({
           {
             name: "TBD",
             seed: " ",
-            score1: 0,
-            score2: 0,
-            score3: 0,
+            score: 0,
             record: "0 - 0"
           },
           {
             name: "TBD",
             seed: " ",
-            score1: 0,
-            score2: 0,
-            score3: 0,
+            score: 0,
+            record: "0 - 0"
+          }
+        ],
+        [
+          {
+            name: "TBD",
+            seed: " ",
+            score: 0,
+            record: "0 - 0"
+          },
+          {
+            name: "TBD",
+            seed: " ",
+            score: 0,
+            record: "0 - 0"
+          }
+        ],
+        [
+          {
+            name: "TBD",
+            seed: " ",
+            score: 0,
+            record: "0 - 0"
+          },
+          {
+            name: "TBD",
+            seed: " ",
+            score: 0,
             record: "0 - 0"
           }
         ]
       ]
     },
-    cons_bracket: [],
+    cons_bracket: {
+      round1: [
+        [
+          {
+            name: "TBD",
+            seed: " ",
+            score: 01
+          },
+          {
+            name: "TBD",
+            seed: " ",
+            score: 02
+          }
+        ],
+        [
+          {
+            name: "TBD",
+            seed: " ",
+            score: 03
+          },
+          {
+            name: "TBD",
+            seed: " ",
+            score: 04
+          }
+        ]
+      ],
+      round2: [
+        [
+          {
+            name: "TBD",
+            seed: " ",
+            score: 05
+          },
+          {
+            name: "TBD",
+            seed: " ",
+            score: 06
+          }
+        ],
+        [
+          {
+            name: "TBD",
+            seed: " ",
+            score: 07
+          },
+          {
+            name: "TBD",
+            seed: " ",
+            score: 08
+          }
+        ]
+      ],
+      round3: [
+        [
+          {
+            name: "TBD",
+            seed: " ",
+            score: 09
+          },
+          {
+            name: "TBD",
+            seed: " ",
+            score: 10
+          }
+        ],
+        [
+          {
+            name: "TBD",
+            seed: " ",
+            score: 11
+          },
+          {
+            name: "TBD",
+            seed: " ",
+            score: 12
+          }
+        ]
+      ],
+      round4: [
+        [
+          {
+            name: "TBD",
+            seed: " ",
+            score: 13
+          },
+          {
+            name: "TBD",
+            seed: " ",
+            score: 14
+          }
+        ]
+      ]
+    },
     teams: [
       {
         name: "All Bidness",
@@ -322,7 +437,11 @@ var app = new Vue({
   },
   methods: {
     roundUp: function() {
-      if (this.round < 5) {
+      if (
+        (this.bracket == "champions" && this.round < 5) ||
+        (this.bracket == "cons" && this.round < 4) ||
+        (this.bracket == "feces" && this.round < 2)
+      ) {
         this.round++;
       }
     },
@@ -343,7 +462,7 @@ var app = new Vue({
       if (newBracket == "cons") {
         this.bracket = "cons";
         this.title = "Consolation Tourney";
-        this.round = 2;
+        this.round = 1;
       }
       if (newBracket == "feces") {
         this.bracket = "feces";

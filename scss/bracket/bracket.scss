@@ -21,6 +21,12 @@
   .chip {
     background-color: rgba(goldenrod, 0.35);
   }
+  .cons {
+    background-color: rgba($site-gray, 0.45);
+  }
+  .feces {
+    background-color: rgba(saddlebrown, 0.45);
+  }
 
   .matchupDiv {
     display: flex;
@@ -91,6 +97,20 @@
     height: 4px;
     width: 100%;
     background-color: rgba(goldenrod, 0.85);
+    border-radius: 3px;
+    margin: 0 auto;
+  }
+  .consLine {
+    height: 4px;
+    width: 100%;
+    background-color: rgba($site-gray, 0.85);
+    border-radius: 3px;
+    margin: 0 auto;
+  }
+  .fecesLine {
+    height: 4px;
+    width: 100%;
+    background-color: rgba(saddlebrown, 0.85);
     border-radius: 3px;
     margin: 0 auto;
   }

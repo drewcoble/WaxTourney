@@ -31,7 +31,7 @@ h1 {
   font-family: $font-arvo;
   text-align: center;
   margin: 0 5px;
-  height: 95px;
+  height: 90px;
   padding-top: 60px;
   font-size: 20px;
   letter-spacing: 1px;
@@ -44,5 +44,14 @@ h3 {
   margin: 5px;
   letter-spacing: 7px;
   font-size: 18px;
+  font-weight: 100;
+}
+h4 {
+  color: saddlebrown;
+  font-family: $font-arvo;
+  text-align: center;
+  margin: 3px;
+  letter-spacing: 3px;
+  font-size: 14px;
   font-weight: 100;
 }
