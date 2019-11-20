@@ -47,7 +47,7 @@ h3 {
   font-family: "Arvo", serif;
   padding: 0;
   position: fixed;
-  bottom: 40px;
+  bottom: 30px;
   border-bottom: 2px solid rgba(245, 245, 250, 0.1); }
   .navLinksContainer .navDivide {
     display: none;
@@ -107,7 +107,7 @@ h3 {
   .bracketContainer .losers {
     background-color: rgba(150, 0, 0, 0.15); }
   .bracketContainer .winners {
-    background-color: rgba(0, 0, 150, 0.15); }
+    background-color: rgba(0, 0, 150, 0.2); }
   .bracketContainer .chip {
     background-color: rgba(218, 165, 32, 0.15); }
   .bracketContainer .matchupDiv {
@@ -220,7 +220,7 @@ h3 {
     color: rgba(70, 70, 75, 0); }
 
 footer {
-  height: 40px;
+  height: 30px;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
