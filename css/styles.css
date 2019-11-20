@@ -18,9 +18,10 @@ h1 {
   color: #f5f5fa;
   font-family: "Arvo", serif;
   text-align: center;
-  margin: 65px 5px 0;
-  height: 50px;
-  font-size: 25px;
+  margin: 0 5px;
+  height: 95px;
+  padding-top: 60px;
+  font-size: 20px;
   letter-spacing: 1px; }
 
 h3 {
@@ -87,8 +88,7 @@ h3 {
 
 .bracketContainer {
   width: 100%;
-  min-height: 500px;
-  height: calc(100% - 250px);
+  min-height: calc(100% - 215px);
   background-color: #0a0a0f;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -105,7 +105,7 @@ h3 {
   align-items: center;
   padding: 0 20px;
   font-family: "Barlow", sans-serif;
-  margin: 0 auto 120px; }
+  margin: 0 auto 100px; }
   .bracketContainer .losers {
     background-color: rgba(150, 0, 0, 0.2); }
   .bracketContainer .winners {

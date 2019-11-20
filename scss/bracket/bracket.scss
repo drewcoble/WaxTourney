@@ -1,7 +1,6 @@
 .bracketContainer {
   width: 100%;
-  min-height: 500px;
-  height: calc(100% - 250px);
+  min-height: calc(100% - 215px);
   // height: 100%;
   background-color: $site-black;
   display: flex;
@@ -10,7 +9,7 @@
   align-items: center;
   padding: 0 20px;
   font-family: $font-barlow;
-  margin: 0 auto 120px;
+  margin: 0 auto 100px;
   //margin-top: -10px;
 
   .losers {
