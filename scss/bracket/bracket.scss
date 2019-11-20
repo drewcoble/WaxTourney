@@ -49,8 +49,8 @@
         border-radius: 30px;
         font-size: 14px;
         font-family: sans-serif;
-        font-weight: 700;
-        padding: 1px 0px 0px 1px;
+        font-weight: 100;
+        padding: 2px 0px 0px 1px;
         margin-left: 20px;
       }
       .teamInfo {
@@ -68,29 +68,29 @@
     .matchupBreak {
       height: 3px;
       width: 100%;
-      background-color: rgba($site-gray, 0.5);
+      background-color: rgba($site-mediumgray, 0.95);
       border-radius: 3px;
       margin: 2px auto;
     }
   }
   .winnersLine {
-    height: 3px;
+    height: 4px;
     width: 100%;
-    background-color: rgba($site-blue, 0.75);
+    background-color: rgba($site-blue, 0.85);
     border-radius: 3px;
     margin: 0 auto;
   }
   .losersLine {
-    height: 3px;
+    height: 4px;
     width: 100%;
-    background-color: rgba($site-red, 0.75);
+    background-color: rgba($site-red, 0.85);
     border-radius: 3px;
     margin: 0 auto;
   }
   .chipLine {
-    height: 3px;
+    height: 4px;
     width: 100%;
-    background-color: rgba(goldenrod, 0.75);
+    background-color: rgba(goldenrod, 0.85);
     border-radius: 3px;
     margin: 0 auto;
   }

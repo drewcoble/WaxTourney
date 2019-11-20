@@ -152,8 +152,8 @@ h3 {
         border-radius: 30px;
         font-size: 14px;
         font-family: sans-serif;
-        font-weight: 700;
-        padding: 1px 0px 0px 1px;
+        font-weight: 100;
+        padding: 2px 0px 0px 1px;
         margin-left: 20px; }
       .bracketContainer .matchupDiv .teamDiv .teamInfo {
         width: 100%;
@@ -172,25 +172,25 @@ h3 {
     .bracketContainer .matchupDiv .matchupBreak {
       height: 3px;
       width: 100%;
-      background-color: rgba(100, 100, 105, 0.5);
+      background-color: rgba(70, 70, 75, 0.95);
       border-radius: 3px;
       margin: 2px auto; }
   .bracketContainer .winnersLine {
-    height: 3px;
+    height: 4px;
     width: 100%;
-    background-color: rgba(0, 0, 150, 0.75);
+    background-color: rgba(0, 0, 150, 0.85);
     border-radius: 3px;
     margin: 0 auto; }
   .bracketContainer .losersLine {
-    height: 3px;
+    height: 4px;
     width: 100%;
-    background-color: rgba(150, 0, 0, 0.75);
+    background-color: rgba(150, 0, 0, 0.85);
     border-radius: 3px;
     margin: 0 auto; }
   .bracketContainer .chipLine {
-    height: 3px;
+    height: 4px;
     width: 100%;
-    background-color: rgba(218, 165, 32, 0.75);
+    background-color: rgba(218, 165, 32, 0.85);
     border-radius: 3px;
     margin: 0 auto; }
   .bracketContainer .break {
