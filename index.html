@@ -24,16 +24,16 @@
           class="fas fa-arrow-circle-left"
         ></i>
         <div v-if="bracket=='champions'">
-          ROUND {{ round }} (Week {{ round + 11 }})
+          ROUND {{ round }} • Week {{ round + 11 }}
         </div>
         <div v-if="bracket=='cons'">
-          ROUND {{ round }} (Week {{ round + 13 }})
+          ROUND {{ round }} • Week {{ round + 13 }}
         </div>
         <div v-if="bracket=='feces' && round == 1">
-          ROUND {{ round }} (Weeks {{ round + 11 }} & {{ round + 12 }})
+          ROUND {{ round }} • Weeks {{ round + 11 }} & {{ round + 12 }}
         </div>
         <div v-if="bracket=='feces' && round == 2">
-          ROUND {{ round }} (Weeks {{ round + 12 }} - {{ round + 14 }})
+          ROUND {{ round }} • Weeks {{ round + 12 }} - {{ round + 14 }}
         </div>
         <i
           v-bind:class="{lastRound : (round==5 && bracket=='champions') || (round==4 && bracket=='cons') || (round==2 && bracket=='feces')}"

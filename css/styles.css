@@ -19,7 +19,7 @@ h1 {
   font-family: "Arvo", serif;
   text-align: center;
   margin: 0 5px;
-  height: 90px;
+  height: 87px;
   padding-top: 60px;
   font-size: 20px;
   letter-spacing: 1px; }
@@ -38,7 +38,7 @@ h4 {
   font-family: "Arvo", serif;
   text-align: center;
   margin: 3px;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
   font-size: 14px;
   font-weight: 100; }
 
@@ -237,7 +237,7 @@ h4 {
   align-items: center;
   background-color: rgba(70, 70, 75, 0.95);
   font-family: "Barlow", sans-serif;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   color: #f5f5fa;
   font-weight: 700;
   position: fixed;
