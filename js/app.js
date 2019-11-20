@@ -332,6 +332,9 @@ var app = new Vue({
       }
     },
     changeBracket: function(newBracket) {
+      if (this.bracket != newBracket) {
+        window.scrollTo(0, 0); // values are x,y-offset
+      }
       if (newBracket == "champions") {
         this.bracket = "champions";
         this.title = "Championship Bracket";
