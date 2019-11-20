@@ -18,7 +18,7 @@ h1 {
   color: #f5f5fa;
   font-family: "Arvo", serif;
   text-align: center;
-  margin: 10px 5px 0;
+  margin: 20px 5px 0;
   height: 50px;
   font-size: 25px;
   letter-spacing: 2px; }
@@ -71,7 +71,7 @@ h3 {
     align-items: center;
     background-color: rgba(245, 245, 250, 0.2);
     text-align: center;
-    width: 50px;
+    width: 100px;
     height: 50px;
     color: #f5f5fa;
     font-size: 25px;
@@ -79,7 +79,7 @@ h3 {
     border-radius: 12px; }
     .navLinksContainer .navLink p {
       margin: 5px auto;
-      font-size: 10px; }
+      font-size: 8px; }
     .navLinksContainer .navLink:hover {
       cursor: pointer; }
     .navLinksContainer .navLink i {
@@ -87,7 +87,8 @@ h3 {
 
 .bracketContainer {
   width: 100%;
-  max-height: 702px;
+  min-height: 500px;
+  height: calc(100% - 250px);
   background-color: #0a0a0f;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -96,18 +97,19 @@ h3 {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  -ms-flex-pack: distribute;
-  justify-content: space-around;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
   padding: 0 20px;
   font-family: "Barlow", sans-serif;
-  margin-bottom: 120px; }
+  margin: 0 auto 120px; }
   .bracketContainer .losers {
-    background-color: rgba(150, 0, 0, 0.15); }
+    background-color: rgba(150, 0, 0, 0.2); }
   .bracketContainer .winners {
-    background-color: rgba(0, 0, 150, 0.2); }
+    background-color: rgba(0, 0, 150, 0.22); }
   .bracketContainer .chip {
     background-color: rgba(218, 165, 32, 0.15); }
   .bracketContainer .matchupDiv {
