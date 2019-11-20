@@ -10,7 +10,7 @@ var app = new Vue({
           {
             name: "All Bidness",
             seed: 1,
-            score: 0
+            score: 17.18
           },
           {
             name: "NuKŁearWaR",
@@ -22,7 +22,7 @@ var app = new Vue({
           {
             name: "YoungHamstringInjury",
             seed: 4,
-            score: 0
+            score: 55
           },
           {
             name: "Save a 🐎 Ride a 🤠",
@@ -204,7 +204,7 @@ var app = new Vue({
           {
             name: "Lights.Kamara.Action",
             seed: "10",
-            score1: 0,
+            score1: 11.9,
             score2: 0
           },
           {
@@ -216,7 +216,7 @@ var app = new Vue({
           {
             name: "Bless'em",
             seed: "12",
-            score1: 0,
+            score1: 20.6,
             score2: 0
           }
         ]
