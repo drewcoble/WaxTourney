@@ -16,14 +16,14 @@ var app = new Vue({
           {
             name: "NuKŁearWaR",
             seed: 8,
-            score: 26.6
+            score: 44
           }
         ],
         [
           {
             name: "YoungHamstringInjury",
             seed: 4,
-            score: 57
+            score: 62.2
           },
           {
             name: "Save a 🐎 Ride a 🤠",
@@ -47,12 +47,12 @@ var app = new Vue({
           {
             name: "Crim De La Squish",
             seed: 2,
-            score: 12.76
+            score: 22.92
           },
           {
             name: "ChirpChirp13",
             seed: 7,
-            score: 6.8
+            score: 7.1
           }
         ]
       ],
@@ -199,7 +199,7 @@ var app = new Vue({
           {
             name: "Rick Swift Old Bitch",
             seed: "9",
-            score1: 4.6,
+            score1: 6.4,
             score2: 0
           },
           {
@@ -217,7 +217,7 @@ var app = new Vue({
           {
             name: "Bless'em",
             seed: "12",
-            score1: 32.34,
+            score1: 33.76,
             score2: 0
           }
         ]
