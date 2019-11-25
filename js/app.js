@@ -6,7 +6,7 @@ var app = new Vue({
     title: "Championship Bracket",
     bracket: "champions",
     winners_bracket: {
-      key: 0,
+      key: 1,
       round1: [
         [
           {
