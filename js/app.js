@@ -77,8 +77,8 @@ var app = new Vue({
             score: 0
           },
           {
-            name: "The Commish",
-            seed: "6",
+            name: "TBD",
+            seed: " ",
             score: 0
           }
         ]
