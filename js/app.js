@@ -138,8 +138,8 @@ var app = new Vue({
         ],
         [
           {
-            name: "Original Recipe",
-            seed: "3",
+            name: "TBD",
+            seed: " ",
             score: 0
           },
           {
