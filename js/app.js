@@ -1,6 +1,3 @@
-import Vue from "vue";
-document.ready(Vue.forceUpdate());
-
 var app = new Vue({
   el: "#app",
   data: {
