@@ -6,7 +6,7 @@ var app = new Vue({
     title: "Championship Bracket",
     bracket: "champions",
     winners_bracket: {
-      key: 1,
+      w_key: 1,
       round1: [
         [
           {
@@ -122,7 +122,7 @@ var app = new Vue({
       ]
     },
     losers_bracket: {
-      key: 0,
+      l_key: 0,
       round2: [
         [
           {
@@ -196,7 +196,7 @@ var app = new Vue({
       ]
     },
     feces_bracket: {
-      key: 0,
+      f_key: 0,
       round1: [
         [
           {
@@ -271,7 +271,7 @@ var app = new Vue({
       ]
     },
     cons_bracket: {
-      key: 0,
+      c_key: 0,
       round1: [
         [
           {
