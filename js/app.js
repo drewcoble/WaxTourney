@@ -2,57 +2,58 @@ var app = new Vue({
   el: "#app",
   data: {
     round: 1,
-    update: 2,
+    update: 3,
     title: "Championship Bracket",
     bracket: "champions",
     winners_bracket: {
+      key: 0,
       round1: [
         [
           {
             name: "All Bidness",
             seed: 1,
-            score: 20.08
+            score: 91.38
           },
           {
             name: "NuKŁearWaR",
             seed: 8,
-            score: 44
+            score: 93.34
           }
         ],
         [
           {
             name: "YoungHamstringInjury",
             seed: 4,
-            score: 62.2
+            score: 118.82
           },
           {
             name: "Save a 🐎 Ride a 🤠",
             seed: 5,
-            score: 0
+            score: 69.2
           }
         ],
         [
           {
             name: "Original Recipe",
             seed: 3,
-            score: 17.2
+            score: 79.5
           },
           {
             name: "The Commish",
             seed: 6,
-            score: 12.3
+            score: 123.3
           }
         ],
         [
           {
             name: "Crim De La Squish",
             seed: 2,
-            score: 22.92
+            score: 126.22
           },
           {
             name: "ChirpChirp13",
             seed: 7,
-            score: 7.1
+            score: 70.54
           }
         ]
       ],
@@ -121,28 +122,29 @@ var app = new Vue({
       ]
     },
     losers_bracket: {
+      key: 0,
       round2: [
         [
           {
-            name: "TBD",
-            seed: " ",
+            name: "All Bidness",
+            seed: "1",
             score: 0
           },
           {
-            name: "TBD",
-            seed: " ",
+            name: "ChirpChirp13",
+            seed: "7",
             score: 0
           }
         ],
         [
           {
-            name: "TBD",
-            seed: " ",
+            name: "Original Recipe",
+            seed: "3",
             score: 0
           },
           {
-            name: "TBD",
-            seed: " ",
+            name: "Save a 🐎 Ride a 🤠",
+            seed: "5",
             score: 0
           }
         ]
@@ -194,30 +196,31 @@ var app = new Vue({
       ]
     },
     feces_bracket: {
+      key: 0,
       round1: [
         [
           {
             name: "Rick Swift Old Bitch",
             seed: "9",
-            score1: 6.4,
+            score1: 95.82,
             score2: 0
           },
           {
             name: "Lights.Kamara.Action",
             seed: "10",
-            score1: 11.9,
+            score1: 105.34,
             score2: 0
           },
           {
             name: "Not Sparin' the Rod",
             seed: "11",
-            score1: 3.3,
+            score1: 56.96,
             score2: 0
           },
           {
             name: "Bless'em",
             seed: "12",
-            score1: 33.76,
+            score1: 106.46,
             score2: 0
           }
         ]
@@ -268,6 +271,7 @@ var app = new Vue({
       ]
     },
     cons_bracket: {
+      key: 0,
       round1: [
         [
           {
@@ -443,6 +447,7 @@ var app = new Vue({
         (this.bracket == "cons" && this.round < 4) ||
         (this.bracket == "feces" && this.round < 2)
       ) {
+        this.transitionLeft();
         this.round++;
       }
     },
@@ -469,6 +474,32 @@ var app = new Vue({
         this.bracket = "feces";
         this.title = "Feces Cup©";
         this.round = 1;
+      }
+    },
+
+    transitionLeft: function() {
+      var thisRound = this.round;
+      var nextRound = this.round + 1;
+      var oldRoundDivs = document.querySelectorAll(
+        '[divRound="' + thisRound + '"]'
+      );
+      var newRoundDivs = document.querySelectorAll(
+        '[divRound="' + nextRound + '"]'
+      );
+
+      console.log(oldRoundDivs);
+      console.log(newRoundDivs);
+
+      for (i = 0; i < oldRoundDivs.length; i++) {
+        var thisDiv = oldRoundDivs[i];
+
+        thisDiv.classList.add("swipeOutLeft");
+      }
+
+      for (i = 0; i < newRoundDivs.length; i++) {
+        var thisDiv = newRoundDivs[i];
+
+        thisDiv.classList.add("swipeInLeft");
       }
     }
   }
