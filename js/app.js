@@ -60,25 +60,25 @@ var app = new Vue({
       round2: [
         [
           {
-            name: "TBD",
-            seed: " ",
+            name: "Crim De La Squish",
+            seed: "2",
             score: 0
           },
           {
-            name: "TBD",
-            seed: " ",
+            name: "NuKŁearWaR",
+            seed: "7",
             score: 0
           }
         ],
         [
           {
-            name: "TBD",
-            seed: " ",
+            name: "YoungHamstringInjury",
+            seed: "4",
             score: 0
           },
           {
-            name: "TBD",
-            seed: " ",
+            name: "The Commish",
+            seed: "6",
             score: 0
           }
         ]
@@ -493,13 +493,13 @@ var app = new Vue({
       for (i = 0; i < oldRoundDivs.length; i++) {
         var thisDiv = oldRoundDivs[i];
 
-        thisDiv.classList.add("swipeOutLeft");
+        //thisDiv.classList.add("swipeOutLeft");
       }
 
       for (i = 0; i < newRoundDivs.length; i++) {
         var thisDiv = newRoundDivs[i];
 
-        thisDiv.classList.add("swipeInLeft");
+        //thisDiv.classList.add("swipeInLeft");
       }
     }
   }
