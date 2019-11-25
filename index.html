@@ -56,9 +56,8 @@
           class="matchupDiv winners"
           v-if="round == 1"
           v-for="(matchup, index) in winners_bracket.round1"
-          v-bind:key="update"
         >
-          <div class="teamDiv" v-for="team in matchup">
+          <div class="teamDiv" v-for="team in matchup" v-bind:key="update">
             <div class="teamSeed">{{ team.seed }}</div>
             <div class="teamInfo">
               <div>{{ team.name }}</div>
@@ -79,9 +78,8 @@
           class="matchupDiv winners"
           v-if="round == 2"
           v-for="(matchup, index) in winners_bracket.round2"
-          v-bind:key="update"
         >
-          <div class="teamDiv" v-for="team in matchup">
+          <div class="teamDiv" v-for="team in matchup" v-bind:key="update">
             <div class="teamSeed">{{ team.seed }}</div>
             <div class="teamInfo">
               <div>{{ team.name }}</div>
@@ -100,9 +98,8 @@
           class="matchupDiv losers"
           v-if="round == 2"
           v-for="(matchup, index) in losers_bracket.round2"
-          v-bind:key="update"
         >
-          <div class="teamDiv" v-for="team in matchup">
+          <div class="teamDiv" v-for="team in matchup" v-bind:key="update">
             <div class="teamSeed">{{ team.seed }}</div>
             <div class="teamInfo">
               <div>{{ team.name }}</div>
