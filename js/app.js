@@ -2,7 +2,7 @@ var app = new Vue({
   el: "#app",
   data: {
     round: 1,
-    update: 4,
+    update: 4.1,
     title: "Championship Bracket",
     bracket: "champions",
     winners_bracket: {
